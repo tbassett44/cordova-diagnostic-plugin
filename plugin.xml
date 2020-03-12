@@ -2,7 +2,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova.plugins.diagnostic"
-    version="5.0.1-NECTAR">
+    version="5.0.2-NECTAR">
 
     <name>Diagnostic</name>
     <description>Cordova/Phonegap plugin to check the state of Location/WiFi/Camera/Bluetooth device settings.</description>
@@ -123,28 +123,6 @@
         <source-file src="src/ios/Diagnostic_Notifications.m" />
         <!--END_MODULE NOTIFICATIONS-->
 
-        <!--BEGIN_MODULE MICROPHONE-->
-        <config-file target="config.xml" parent="/*">
-            <feature name="Diagnostic_Microphone">
-                <param name="ios-package" value="Diagnostic_Microphone" />
-                <param name="onload" value="true" />
-            </feature>
-        </config-file>
-
-        <js-module src="www/ios/diagnostic.microphone.js" name="Diagnostic_Microphone">
-            <merges target="cordova.plugins.diagnostic.microphone" />
-        </js-module>
-
-        <framework src="AVFoundation.framework" />
-
-        <config-file target="*-Info.plist" parent="NSMicrophoneUsageDescription">
-            <string>This app requires microphone access to function properly.</string>
-        </config-file>
-
-        <header-file src="src/ios/Diagnostic_Microphone.h" />
-        <source-file src="src/ios/Diagnostic_Microphone.m" />
-        <!--END_MODULE MICROPHONE-->
-
     </platform>
 
     <platform name="android">
@@ -225,11 +203,6 @@
         <source-file src="src/android/Diagnostic_Notifications.java" target-dir="src/cordova/plugins" />
         <!--END_MODULE NOTIFICATIONS-->
 
-        <!--BEGIN_MODULE MICROPHONE-->
-        <js-module name="Diagnostic_Microphone" src="www/android/diagnostic.microphone.js">
-            <merges target="cordova.plugins.diagnostic.microphone" />
-        </js-module>
-        <!--END_MODULE MICROPHONE-->
 
     </platform>
 
