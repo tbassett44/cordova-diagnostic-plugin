@@ -2,7 +2,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova.plugins.diagnostic"
-    version="5.0.2-NECTAR">
+    version="5.0.3-NECTAR">
 
     <name>Diagnostic</name>
     <description>Cordova/Phonegap plugin to check the state of Location/WiFi/Camera/Bluetooth device settings.</description>
@@ -122,7 +122,27 @@
         <header-file src="src/ios/Diagnostic_Notifications.h" />
         <source-file src="src/ios/Diagnostic_Notifications.m" />
         <!--END_MODULE NOTIFICATIONS-->
+        <!--BEGIN_MODULE MOTION-->
+        <config-file target="config.xml" parent="/*">
+            <feature name="Diagnostic_Motion">
+                <param name="ios-package" value="Diagnostic_Motion" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
 
+        <js-module src="www/ios/diagnostic.motion.js" name="Diagnostic_Motion">
+            <merges target="cordova.plugins.diagnostic.motion" />
+        </js-module>
+
+        <framework src="CoreMotion.framework" />
+
+        <config-file target="*-Info.plist" parent="NSMotionUsageDescription">
+            <string>This app requires motion detection access to function properly.</string>
+        </config-file>
+
+        <header-file src="src/ios/Diagnostic_Motion.h" />
+        <source-file src="src/ios/Diagnostic_Motion.m" />
+        <!--END_MODULE MOTION-->
     </platform>
 
     <platform name="android">
