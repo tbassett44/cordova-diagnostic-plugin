@@ -52,7 +52,8 @@ var Diagnostic = (function(){
             "RECEIVE_MMS": "RECEIVE_MMS",
             "WRITE_EXTERNAL_STORAGE": "WRITE_EXTERNAL_STORAGE",
             "READ_EXTERNAL_STORAGE": "READ_EXTERNAL_STORAGE",
-            "BODY_SENSORS": "BODY_SENSORS"
+            "BODY_SENSORS": "BODY_SENSORS",
+            "ACTIVITY_RECOGNITION":"ACTIVITY_RECOGNITION"
         };
 
     /**

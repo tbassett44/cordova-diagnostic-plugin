@@ -103,6 +103,7 @@ public class Diagnostic extends CordovaPlugin{
         Diagnostic.addBiDirMapEntry(_permissionsMap, "WRITE_CALL_LOG", Manifest.permission.WRITE_CALL_LOG);
         Diagnostic.addBiDirMapEntry(_permissionsMap, "READ_EXTERNAL_STORAGE", Manifest.permission.READ_EXTERNAL_STORAGE);
         Diagnostic.addBiDirMapEntry(_permissionsMap, "BODY_SENSORS", Manifest.permission.BODY_SENSORS);
+        Diagnostic.addBiDirMapEntry(_permissionsMap, "ACTIVITY_RECOGNITION", Manifest.permission.ACTIVITY_RECOGNITION);
         permissionsMap = Collections.unmodifiableMap(_permissionsMap);
     }
 
