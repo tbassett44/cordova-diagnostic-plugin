@@ -114,12 +114,12 @@ var Diagnostic = (function(){
         if(typeof(permissions) !== "object") permissions = [permissions];
         var valid = true, invalidPermissions = [];
         permissions.forEach(function(permission){
-            if(!Diagnostic.permission[permission]){
-                invalidPermissions.push(permission);
-            }
+            // if(!Diagnostic.permission[permission]){
+            //     invalidPermissions.push(permission);
+            // }
         });
         if(invalidPermissions.length > 0){
-            errorCallback("Invalid permissions specified: "+invalidPermissions.join(", "));
+            errorCallback("Invalid permissions specified:: "+invalidPermissions.join(", "));
             valid = false;
         }
         return valid;
